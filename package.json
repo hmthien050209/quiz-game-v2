@@ -16,11 +16,12 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@reduxjs/toolkit": "^2.2.7",
+    "@types/canvas-confetti": "^1.6.4",
+    "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.10",
-    "motion": "^10.18.0",
     "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18",
@@ -47,5 +48,5 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
 }

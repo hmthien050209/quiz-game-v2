@@ -10,7 +10,7 @@ export default function Page() {
       <audio
         src="/audio/background-music.mp3"
         autoPlay
-        hidden
+        controls
       ></audio>
       <span className={`${bangers.className} m-8 p-8 text-7xl`}>
         Đi tìm từ khóa

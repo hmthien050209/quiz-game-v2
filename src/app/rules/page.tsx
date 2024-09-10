@@ -1,3 +1,4 @@
+import { rules } from "../lib/data";
 import { oswald } from "../lib/fonts";
 import Link from "next/link";
 
@@ -5,8 +6,6 @@ import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Page() {
-  const rules: string[] = [];
-
   return (
     <div
       className={`relative h-screen w-screen bg-[url("/images/background.png")] p-32`}

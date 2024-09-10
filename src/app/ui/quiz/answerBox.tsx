@@ -1,9 +1,12 @@
+"use client";
+
 import clsx from "clsx";
 import { useState } from "react";
 
 import { quizzes } from "@/app/lib/data";
 import { solve } from "@/app/lib/features/quizSolved/quizSolvedSlice";
 import { useAppDispatch, useAppSelector } from "@/app/lib/hooks";
+import { playConfetti } from "@/app/lib/playConfetti";
 import {
   faXmarkSquare,
   faCheckSquare,
@@ -22,7 +25,7 @@ export default function AnswerBox({
   const [selected, setSelected] = useState(false);
 
   const dispatch = useAppDispatch();
-  const quizSolvedList = useAppSelector((state) => state.quizLock.value);
+  const quizSolvedList = useAppSelector((state) => state.quizSolved.value);
   const solved = quizSolvedList[id];
 
   function checkAnswer() {
@@ -30,16 +33,17 @@ export default function AnswerBox({
 
     if (correct) {
       dispatch(solve(id));
+      playConfetti();
     }
   }
 
-  // `isSolved` has higher priority than `selected`
+  // `solved` has higher priority than `selected`
   return (
     <div
       onClick={checkAnswer}
       className={clsx([
         "m-2 flex h-32 w-4/5 cursor-pointer items-center rounded-lg border-2 pl-8 text-4xl shadow-lg transition-all duration-100 ease-linear",
-        { "border-titleForegroundColor bg-button": !selected && !solved },
+        { "border-titleForeground bg-button": !selected && !solved },
         {
           "scale-105 border-emerald-600 bg-emerald-500 text-white":
             correct && (solved || selected),
@@ -53,7 +57,10 @@ export default function AnswerBox({
       {answer}
       <FontAwesomeIcon
         icon={correct ? faCheckSquare : faXmarkSquare}
-        className={clsx(selected || solved ? "scale-100" : "scale-0")}
+        className={clsx(
+          selected || solved ? "scale-100" : "scale-0",
+          "mx-4 ml-auto",
+        )}
       ></FontAwesomeIcon>
     </div>
   );

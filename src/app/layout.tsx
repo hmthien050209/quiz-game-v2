@@ -22,7 +22,7 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body
-          className={`${robotoSlab.className} h-screen w-screen overflow-hidden bg-[url("/images/background.png")] antialiased`}
+          className={`${robotoSlab.className} h-screen w-screen overflow-hidden bg-[url("/images/background.png")] bg-cover antialiased`}
         >
           {children}
         </body>
