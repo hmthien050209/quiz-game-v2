@@ -2,26 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  button {
+    @apply m-4 flex cursor-pointer items-center justify-center rounded-lg border-2 border-titleForeground bg-button p-4 text-center text-2xl text-foreground shadow-lg transition-all duration-150 ease-linear;
   }
 }

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -9,8 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#FFF5EC",
+        subBackground: "#C8A888",
+        titleForeground: "#3D4139",
+        foreground: "#343434",
+        button: colors.orange[200],
       },
     },
   },
